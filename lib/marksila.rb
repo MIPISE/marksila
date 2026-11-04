@@ -24,7 +24,7 @@ module Marksila
     custom_file_path = "#{Dir.pwd}/config/marksila.yml"
 
     if @config.nil?
-      @config ||= if File.exists?(custom_file_path)
+      @config ||= if File.exist?(custom_file_path)
                     YAML.load_file(custom_file_path)
                   else
                     YAML.load_file("#{File.expand_path(File.dirname(__FILE__))}/marksila/default_config.yml")
